@@ -1,0 +1,20 @@
+<rml>
+    <head>
+        <link href="/Assets/Chess/chess.rcss" type="text/rcss" />
+        <link href="/Assets/UI/Kenney/kenney.rcss" type="text/rcss" />
+    </head>
+
+    <body style="decorator: image(/Assets/Background.png);" data-model="start">
+
+        <div class="menu" style="margin-top: 40%">
+
+            <input type="text" placeholder="127.0.0.1:1234" data-value="ipAddress" data-event-submit="join" />
+            
+            <button class="button" data-event-click="join">Join</button>
+            
+            <button class="button" data-event-click="host">Host</button>
+
+        </div>
+
+    </body>
+</rml>

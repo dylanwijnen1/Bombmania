@@ -1,0 +1,107 @@
+body, div,
+h1, h2, h3, h4,
+h5, h6, p,
+hr, pre, datagrid,
+tabset tabs
+{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+    display: block;
+    font-family: KenVector Future;
+}
+
+h1
+{
+	font-size: 2em;
+	margin: .67em 0;
+}
+
+h2
+{
+	font-size: 1.5em;
+	margin: .83em 0;
+}
+
+h3
+{
+	font-size: 1.17em;
+	margin: 1em 0;
+}
+
+h4, p
+{
+	margin: 1.33em 0;
+}
+
+h5
+{
+	font-size: .83em;
+	line-height: 1.17em;
+	margin: 1.67em 0;
+}
+
+h6
+{
+	font-size: .67em;
+	margin: 2.33em 0;
+}
+
+h1, h2, h3, h4,
+h5, h6, strong
+{
+	font-weight: bold;
+}
+
+em
+{
+	font-style: italic;
+}
+
+pre
+{
+	white-space: pre;
+}
+
+hr
+{
+	border-width: 1px;
+}
+
+.menu 
+{
+    display: block;
+}
+
+.menu .button
+{
+    display: block;
+    width: 300px;
+    text-align: center;
+    margin: 1em auto;
+}
+
+.menu input
+{
+	display: block;
+    width: 300px;
+    text-align: left;
+	vertical-align: middle;
+	line-height: 100%;
+    margin: 0 auto;
+	padding: 1em;
+}
+
+.menu input:placeholder
+{
+	opacity: 0.8;
+}
+
+.img-responsive
+{
+    display: block;
+    width: 100%;
+    height: auto;
+}

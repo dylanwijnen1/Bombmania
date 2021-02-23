@@ -1,0 +1,15 @@
+<rml>
+    <head>
+        <link href="/Assets/Chess/chess.rcss" type="text/rcss" />
+        <link href="/Assets/UI/Kenney/kenney.rcss" type="text/rcss" />
+    </head>
+
+    <body style="decorator: image(/Assets/Background.png);">
+
+        <!-- Board Creates Tiles 8x8 -->
+        <board id="board">
+            
+        </board>
+
+    </body>
+</rml>

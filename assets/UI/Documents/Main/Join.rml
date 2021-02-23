@@ -1,0 +1,33 @@
+<rml>
+    <head>
+        <link href="/Assets/UI/Documents/style.rcss" type="text/rcss" />
+        <link href="/Assets/UI/Kenney/kenney.rcss" type="text/rcss" />
+    </head>
+
+    <body style="decorator: image(/Assets/Background.png);" data-model="main">
+
+        <img src="/Assets/Logo.png" class="img-responsive" style="width:500px; margin:5em auto;" />
+
+        <div class="menu">
+
+            <input type="text"
+                   style="position:relative;"
+                   name="ipAddress"
+                   placeholder="127.0.0.1:1234"
+                   data-value="ipAddress"
+                   data-event-submit="join">
+                <!-- Temp Placeholder implementation, It's possible to create a custom attribute / decorator to fix this. -->
+                <!--<p 
+                    style="position:absolute; top: 0; left:0; right:0; bottom:0; margin:0; text-align:left;"
+                    data-if="ipAddress == ''">
+                    Placeholder
+                </p>-->
+            </input>
+            
+            <button class="button" data-event-click="join">Connect</button>
+            
+            <button class="button" data-event-click="showHome">Back</button>
+        </div>
+
+    </body>
+</rml>

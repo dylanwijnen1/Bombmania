@@ -1,0 +1,19 @@
+<rml>
+    <head>
+        <link href="/Assets/Chess/chess.rcss" type="text/rcss" />
+        <link href="/Assets/UI/Kenney/kenney.rcss" type="text/rcss" />
+    </head>
+    <body style="decorator: image(/Assets/Background.png);" data-model="main">
+        
+        <img src="/Assets/Logo.png" class="img-responsive" style="width:500px; margin:5em auto;" />
+
+        <div class="menu">
+            <button class="button" data-event-click="showJoin">Join</button>
+            <button class="button" data-event-click="host">Host</button>
+            <button class="button" data-event-click="showSettings">Settings</button>
+            <button class="button">Credits</button>
+            <button class="button" data-event-click="quit">Exit</button>
+        </div>
+
+    </body>
+</rml>

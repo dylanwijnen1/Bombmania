@@ -1,0 +1,12 @@
+[submodule "dependencies/Json/Json-repo"]
+	path = dependencies/Json/Json-repo
+	url = https://github.com/nlohmann/json.git
+[submodule "dependencies/SFML/SFML-repo"]
+	path = dependencies/SFML/SFML-repo
+	url = https://github.com/SFML/SFML.git
+[submodule "dependencies/RmlUi/RmlUi-repo"]
+	path = dependencies/RmlUi/RmlUi-repo
+	url = https://github.com/mikke89/RmlUi.git
+[submodule "dependencies/ImGui/ImGui-repo"]
+	path = dependencies/ImGui/ImGui-repo
+	url = https://github.com/ocornut/imgui.git

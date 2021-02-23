@@ -1,0 +1,23 @@
+<rml>
+    <head>
+        <link href="/Assets/UI/Documents/style.rcss" type="text/rcss" />
+        <link href="/Assets/UI/Kenney/kenney.rcss" type="text/rcss" />
+    </head>
+
+    <body style="decorator: image(/Assets/Background.png);" data-model="settings">
+
+        <div class="panel">
+
+            <label for="playerName"></label>
+            <input type="text" name="playerName" data-value="playerName" />
+
+            <div class="bottom-controls">
+                <button class="button" data-event-click="showHome">Back</button>
+                <button class="button" data-event-click="applyChanges">Apply</button>
+            </div>
+
+        </div>
+
+    </body>
+
+</rml>

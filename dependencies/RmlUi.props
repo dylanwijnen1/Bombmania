@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Compiles and includes the following : System, Window, Audio and Graphic -->
+<Project ToolsVersion="4.0"
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <ImportGroup Label="PropertySheets" />
+
+    <PropertyGroup Label="UserMacros">
+
+        <RmlRoot>$(MSBuildThisFileDirectory)RmlUi\</RmlRoot>
+        <RmlRepo>$(RmlRoot)RmlUi-repo\</RmlRepo>
+
+    </PropertyGroup>
+
+    <!-- Shared -->
+    <ItemDefinitionGroup>
+
+        <ClCompile>
+            <AdditionalIncludeDirectories>
+                $(RmlRepo)Include;
+                %(AdditionalIncludeDirectories)
+            </AdditionalIncludeDirectories>
+        </ClCompile>
+
+        <ClCompile>
+            <PreprocessorDefinitions>
+                RMLUI_STATIC_LIB;
+                %(PreprocessorDefinitions)
+            </PreprocessorDefinitions>
+        </ClCompile>
+
+    </ItemDefinitionGroup>
+
+    <!-- Specific Platform and Configuration Settings -->
+
+    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+        <Link>
+            <AdditionalLibraryDirectories>
+                $(RmlRoot)bin\x86\Debug;
+                %(AdditionalLibraryDirectories)
+            </AdditionalLibraryDirectories>
+        </Link>
+    </ItemDefinitionGroup>
+
+    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+        <Link>
+            <AdditionalLibraryDirectories>
+                $(RmlRoot)bin\x86\Release;
+                %(AdditionalLibraryDirectories)
+            </AdditionalLibraryDirectories>
+        </Link>
+    </ItemDefinitionGroup>
+
+    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+        <Link>
+            <AdditionalLibraryDirectories>
+                $(RmlRoot)bin\x64\Debug;
+                %(AdditionalLibraryDirectories)
+            </AdditionalLibraryDirectories>
+        </Link>
+    </ItemDefinitionGroup>
+
+    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+        <Link>
+            <AdditionalLibraryDirectories>
+                $(RmlRoot)bin\x64\Release;
+                %(AdditionalLibraryDirectories)
+            </AdditionalLibraryDirectories>
+        </Link>
+    </ItemDefinitionGroup>
+
+</Project>

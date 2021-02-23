@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Compiles and includes the following : System, Window, Audio and Graphic -->
+<Project ToolsVersion="4.0"
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ImportGroup Label="PropertySheets" />
+    <PropertyGroup>
+        <ReplaceWildcardsInProjectItems>true</ReplaceWildcardsInProjectItems>
+        <OutDir>$(ProjectDir)bin\$(PlatformShortName)\$(Configuration)\</OutDir>
+    </PropertyGroup>
+    <PropertyGroup Label="UserMacros">
+        <ImGuiRoot>$(MSBuildThisFileDirectory)ImGui-repo\</ImGuiRoot>
+    </PropertyGroup>
+    <ItemDefinitionGroup>
+        <ClCompile>
+            <AdditionalIncludeDirectories>$(ImGuiRoot);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+        </ClCompile>
+        <Link>
+            <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+        </Link>
+        <ClCompile>
+            <PreprocessorDefinitions>
+            %(PreprocessorDefinitions)
+            </PreprocessorDefinitions>
+            <MultiProcessorCompilation>true</MultiProcessorCompilation>
+        </ClCompile>
+    </ItemDefinitionGroup>
+    <ItemGroup>
+        <!-- Source Files -->
+        <ClInclude Include="$(ImGuiRoot)*.h" />
+        <ClCompile Include="$(ImGuiRoot)*.cpp" Exclude="**\*demo.cpp" />
+    </ItemGroup>
+</Project>

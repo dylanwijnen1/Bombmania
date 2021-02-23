@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Compiles and includes the following : System, Window, Audio and Graphic -->
+<Project ToolsVersion="4.0"
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <ImportGroup Label="PropertySheets" />
+
+    <PropertyGroup>
+        <ReplaceWildcardsInProjectItems>true</ReplaceWildcardsInProjectItems>
+        <OutDir>$(ProjectDir)bin\$(PlatformShortName)\$(Configuration)\</OutDir>
+    </PropertyGroup>
+
+    <PropertyGroup Label="UserMacros">
+
+        <SFMLRoot>$(MSBuildThisFileDirectory)SFML-repo\</SFMLRoot>
+
+    </PropertyGroup>
+
+    <ItemDefinitionGroup>
+
+        <ClCompile>
+            <AdditionalIncludeDirectories>
+                $(SFMLRoot)include;
+                $(SFMLRoot)src;
+
+                $(SFMLRoot)extlibs\headers\vulkan;
+                $(SFMLRoot)extlibs\headers\glad\include;
+
+                $(SFMLRoot)extlibs\headers\stb_image;
+                $(SFMLRoot)extlibs\headers\freetype2;
+
+                $(SFMLRoot)extlibs\headers;
+                $(SFMLRoot)extlibs\headers\AL;
+
+                %(AdditionalIncludeDirectories)
+            </AdditionalIncludeDirectories>
+        </ClCompile>
+
+        <Link>
+            <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+            <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+        </Link>
+
+        <ClCompile>
+            <PreprocessorDefinitions>
+                WIN32;
+                _WINDOWS;
+                SFML_STATIC;
+                _CRT_SECURE_NO_DEPRECATE;
+                _SCL_SECURE_NO_WARNINGS;
+
+                OV_EXCLUDE_STATIC_CALLBACKS;
+                FLAC__NO_DLL;
+
+                %(PreprocessorDefinitions)
+            </PreprocessorDefinitions>
+        </ClCompile>
+
+    </ItemDefinitionGroup>
+
+    <ItemGroup>
+
+        <!-- System Source Files -->
+        <ClCompile Include="$(SFMLRoot)src\SFML\System\Win32\*.cpp" />
+        <ClCompile Include="$(SFMLRoot)src\SFML\System\*.cpp" />
+
+        <!-- Audio Source Files -->
+        <ClCompile Include="$(SFMLRoot)src\SFML\Audio\**\*.cpp" />
+
+        <!-- Window Source Files -->
+        <ClCompile Include="$(SFMLRoot)src\SFML\Window\Win32\*.cpp" />
+        <ClCompile Include="$(SFMLRoot)src\SFML\Window\*.cpp" Excludes="**\EGLCheck.cpp;**\EglContext.cpp" />
+
+        <!-- Graphics Source Files -->
+        <ClCompile Include="$(SFMLRoot)src\SFML\Graphics\**\*.cpp" />
+
+    </ItemGroup>
+
+</Project>

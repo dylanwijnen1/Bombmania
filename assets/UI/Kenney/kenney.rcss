@@ -1,0 +1,41 @@
+@spritesheet kenney-blue
+{
+    src: /Assets/UI/Kenney/blueSheet.png;
+    blue_button_outer: 339px 94px 49px 49px;
+    blue_button_inner: 344px 99px 39px 35px;
+
+    blue_button_active_outer: 290px 94px 49px 45px;
+    blue_button_active_inner: 295px 99px 39px 35px;
+}
+
+@spritesheet kenney-grey
+{
+    src: /Assets/UI/Kenney/greySheet.png;
+
+    input_field_outer: 0px 0px 194px 49px;
+    input_field_inner: 8px 8px 178px 34px;
+}
+
+.button
+{
+    display: block;
+    padding: 1em;
+    
+    decorator: ninepatch(blue_button_outer, blue_button_inner);
+}
+
+.button:hover
+{
+    color: #add8e6;
+}
+
+.button:active
+{
+    decorator: ninepatch(blue_button_active_outer, blue_button_active_inner);
+}
+
+input
+{
+    color: black;
+    decorator: ninepatch(input_field_outer, input_field_inner);
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Compiles and includes the following : System, Window, Audio and Graphic -->
+<Project ToolsVersion="4.0"
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <ImportGroup Label="PropertySheets" />
+
+    <PropertyGroup Label="UserMacros">
+
+        <ImGuiRoot>$(MSBuildThisFileDirectory)ImGui\</ImGuiRoot>
+        <RepoRoot>$(ImGuiRoot)ImGui-repo\</RepoRoot>
+
+    </PropertyGroup>
+
+    <!-- Shared -->
+    <ItemDefinitionGroup>
+
+        <ClCompile>
+            <AdditionalIncludeDirectories>
+                $(RepoRoot);
+                %(AdditionalIncludeDirectories)
+            </AdditionalIncludeDirectories>
+        </ClCompile>
+
+    </ItemDefinitionGroup>
+
+    <!-- Specific Platform and Configuration Settings -->
+
+    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+        <Link>
+            <AdditionalLibraryDirectories>
+                $(ImGuiRoot)bin\x86\Debug;
+                %(AdditionalLibraryDirectories)
+            </AdditionalLibraryDirectories>
+        </Link>
+    </ItemDefinitionGroup>
+
+    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+        <Link>
+            <AdditionalLibraryDirectories>
+                $(ImGuiRoot)bin\x86\Release;
+                %(AdditionalLibraryDirectories)
+            </AdditionalLibraryDirectories>
+        </Link>
+    </ItemDefinitionGroup>
+
+    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+        <Link>
+            <AdditionalLibraryDirectories>
+                $(ImGuiRoot)bin\x64\Debug;
+                %(AdditionalLibraryDirectories)
+            </AdditionalLibraryDirectories>
+        </Link>
+    </ItemDefinitionGroup>
+
+    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+        <Link>
+            <AdditionalLibraryDirectories>
+                $(ImGuiRoot)bin\x64\Release;
+                %(AdditionalLibraryDirectories)
+            </AdditionalLibraryDirectories>
+        </Link>
+    </ItemDefinitionGroup>
+
+</Project>

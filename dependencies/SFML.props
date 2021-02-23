@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Compiles and includes the following : System, Window, Audio and Graphic -->
+<Project ToolsVersion="4.0"
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <ImportGroup Label="PropertySheets" />
+
+    <PropertyGroup Label="UserMacros">
+
+        <SFMLRoot>$(MSBuildThisFileDirectory)SFML\</SFMLRoot>
+        <SFMLRepo>$(SFMLRoot)SFML-repo\</SFMLRepo>
+
+    </PropertyGroup>
+
+    <!-- Shared -->
+    <ItemDefinitionGroup>
+
+        <ClCompile>
+            <AdditionalIncludeDirectories>
+                $(SFMLRepo)include;
+                %(AdditionalIncludeDirectories)
+            </AdditionalIncludeDirectories>
+        </ClCompile>
+
+        <Link>
+            <AdditionalDependencies>
+                flac.lib;
+                freetype.lib;
+                ogg.lib;
+                openal32.lib;
+                vorbis.lib;
+                vorbisenc.lib;
+                vorbisfile.lib;
+                opengl32.lib;
+                gdi32.lib;
+                winmm.lib;
+                %(AdditionalDependencies)
+            </AdditionalDependencies>
+        </Link>
+
+        <ClCompile>
+            <PreprocessorDefinitions>
+                SFML_STATIC;
+                %(PreprocessorDefinitions)
+            </PreprocessorDefinitions>
+        </ClCompile>
+
+    </ItemDefinitionGroup>
+
+    <!-- Specific Platform and Configuration Settings -->
+
+    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+        <Link>
+            <AdditionalLibraryDirectories>
+                $(SFMLRoot)bin\x86\Debug;
+                $(SFMLRepo)extlibs\libs-msvc\x86;
+                %(AdditionalLibraryDirectories)
+                </AdditionalLibraryDirectories>
+        </Link>
+    </ItemDefinitionGroup>
+
+    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+        <Link>
+            <AdditionalLibraryDirectories>
+                $(SFMLRoot)bin\x86\Release;
+                $(SFMLRepo)extlibs\libs-msvc\x86;
+                %(AdditionalLibraryDirectories)
+            </AdditionalLibraryDirectories>
+        </Link>
+    </ItemDefinitionGroup>
+
+    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+        <Link>
+            <AdditionalLibraryDirectories>
+                $(SFMLRoot)bin\x64\Debug;
+                $(SFMLRepo)extlibs\libs-msvc\x64;
+                %(AdditionalLibraryDirectories)
+            </AdditionalLibraryDirectories>
+        </Link>
+    </ItemDefinitionGroup>
+
+    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+        <Link>
+            <AdditionalLibraryDirectories>
+                $(SFMLRoot)bin\x64\Release;
+                $(SFMLRepo)extlibs\libs-msvc\x64;
+                %(AdditionalLibraryDirectories)
+            </AdditionalLibraryDirectories>
+        </Link>
+    </ItemDefinitionGroup>
+
+    <Target Name="DisplayMessages">
+        <Message Text="ExtensionLibs = $(SFMLRepo)extlibs\libs-msvc\x64" />
+    </Target>
+
+</Project>
