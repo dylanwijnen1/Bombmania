@@ -47,14 +47,11 @@ namespace Bombmania
 		{
 			Rml::String port = s_model.ipAddress.substr(s_model.ipAddress.find_first_of(':') + 1);
 			int val = Rml::FromString<int>(port, 1234);
-			
-			m_client.Connect(s_model.ipAddress.c_str(), val);
 		});
 
 		pStartModel.BindEventCallback("host", [this](Rml::DataModelHandle handle, Rml::Event& event, const Rml::VariantList& arguments)
 		{
 			int val = Rml::FromString<int>(s_model.ipAddress, 1234);
-			m_server.Open(val);
 		});
 
 		bool result = Rml::LoadFontFace("Assets/Fonts/space_mono_regular.ttf", true);
@@ -97,11 +94,6 @@ namespace Bombmania
 
 	void SceneCheckers::Update(const Time& time)
 	{
-		if (m_client.IsReady())
-			m_client.Poll();
-
-		if (m_server.IsReady())
-			m_server.Poll();
 	}
 
 }

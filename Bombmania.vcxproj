@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -64,6 +64,7 @@
     <Import Project="dependencies\RmlUi.props" />
     <Import Project="dependencies\SFML.props" />
     <Import Project="dependencies\WinSock2.props" />
+    <Import Project="dependencies\spdlog.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -72,6 +73,7 @@
     <Import Project="dependencies\RmlUi.props" />
     <Import Project="dependencies\SFML.props" />
     <Import Project="dependencies\WinSock2.props" />
+    <Import Project="dependencies\spdlog.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -80,6 +82,7 @@
     <Import Project="dependencies\RmlUi.props" />
     <Import Project="dependencies\SFML.props" />
     <Import Project="dependencies\WinSock2.props" />
+    <Import Project="dependencies\spdlog.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -88,6 +91,7 @@
     <Import Project="dependencies\RmlUi.props" />
     <Import Project="dependencies\SFML.props" />
     <Import Project="dependencies\WinSock2.props" />
+    <Import Project="dependencies\spdlog.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -181,9 +185,10 @@
     <ClCompile Include="src\Game\Scenes\SceneMain.cpp" />
     <ClCompile Include="src\Game\Scenes\SceneManager.cpp" />
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\Networking\BaseClient.cpp" />
-    <ClCompile Include="src\Networking\Client.cpp" />
-    <ClCompile Include="src\Networking\Server.cpp" />
+    <ClCompile Include="src\Networking\net\address.cpp" />
+    <ClCompile Include="src\Networking\net\net.cpp" />
+    <ClCompile Include="src\Networking\net\tcp\client.cpp" />
+    <ClCompile Include="src\Networking\net\tcp\server.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Audio\AudioSystem.h" />
@@ -205,11 +210,12 @@
     <ClInclude Include="src\Game\Time.h" />
     <ClInclude Include="src\Interfaces\IScene.h" />
     <ClInclude Include="src\Interfaces\ISystem.h" />
-    <ClInclude Include="src\Networking\BaseClient.h" />
-    <ClInclude Include="src\Networking\Client.h" />
-    <ClInclude Include="src\Networking\Connection.h" />
-    <ClInclude Include="src\Networking\Networking.hpp" />
-    <ClInclude Include="src\Networking\Server.h" />
+    <ClInclude Include="src\Networking\net\address.h" />
+    <ClInclude Include="src\Networking\net\net.hpp" />
+    <ClInclude Include="src\Networking\net\tcp.hpp" />
+    <ClInclude Include="src\Networking\net\tcp\client.h" />
+    <ClInclude Include="src\Networking\net\tcp\server.h" />
+    <ClInclude Include="src\Networking\net\types.h" />
     <ClInclude Include="src\UserInterface\IController.h" />
   </ItemGroup>
   <ItemGroup>
